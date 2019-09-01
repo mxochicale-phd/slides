@@ -131,23 +131,27 @@ Maximize the information in the RSSs.
 
 
 
+
 \subsection{FNN and AMI}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 {
-%\paper{Xochicale M 2018, {\bf PhD thesis}}
+\paper{England 2007, {\bf Gait and Posture}}
 
 \begin{frame}{False Nearest Neighbours (FNN) for embedding dimension}
     \begin{figure}
         \centering
-        \includegraphicscopyright[width=0.9\linewidth]{nonlinear-analyses/cao}{
-	Figure is adapted from Cao L 1997 in {\bf Physica D}}
-	\caption{(A,B) $E_1(m)$ and (C, D) $E_2(m)$ values for (E) chaotic 
-		and (F) random time series} 
+       \includegraphicscopyright[width=0.8\linewidth]{england2007/drawing}{
+	Figure 2 England 2007.}
+	\caption{
+		(A) Plot of $x(t)=\sin(2\pi t) + \cos(2 \pi t)$
+		with embedding dimension $n=3$ and (B) $n=2$.
+		Note that the false-nearest-neighbor illustrated
+		by the intersectoin (-0.25, 0.25) when $n=2$.
+	} 
    \end{figure}
 	
 \end{frame}
 }
-
 
 
 \subsection{Estimation of Embedding Parameters}
@@ -171,10 +175,6 @@ E_1(m) = \frac{ E(m+1) } { E(m)} \quad
 E_2(m) = \frac{ E^* (m+1) } { E^*(m)}
 \end{equation*}
 \end{block}
-
-
-
-
 	
 \end{frame}
 }
@@ -182,18 +182,40 @@ E_2(m) = \frac{ E^* (m+1) } { E^*(m)}
 
 
 
-\subsection{}
+
+\subsection{FNN and AMI}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 {
+%\paper{Xochicale M 2018, {\bf PhD thesis}}
 
-\begin{frame}{Average Mutual Information (AMI) for embedding delay}
+\begin{frame}{False Nearest Neighbours (FNN) for embedding dimension}
     \begin{figure}
         \centering
-        \includegraphicscopyright[width=0.7\linewidth]{nonlinear-analyses/ami}
-	{Figure is adapted from Kabiraj et al. 2012 in {\bf Chaos}}
-	\caption{(A, B) AMI values for (C) chaotic and (D) noise time series.} 
+        \includegraphicscopyright[width=0.9\linewidth]{nonlinear-analyses/cao}{
+	Figure is adapted from Cao L 1997 in {\bf Physica D}}
+	\caption{(A,B) $E_1(m)$ and (C, D) $E_2(m)$ values for (E) chaotic 
+		and (F) random time series} 
    \end{figure}
 	
+\end{frame}
+}
+
+
+
+
+\subsection{Estimation of Embedding Parameters}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{
+\paper{Kantz et al. 2003 in {\bf BOOK: Nonlinear Time Series Analysis}}
+
+\begin{frame}{Average Mutual Information (AMI) for embedding delay}
+
+In order to obtain $\tau_0$, 
+"it has to be found in the first minimum of $I(\tau)$ where $x(n+\tau)$ 
+adds maximal information to the knowledge from $x(n)$" meaning that the 
+redundancy between $x(n+\tau)$ and $x(n)$ is the least .
+
+
 \end{frame}
 }
 
@@ -214,8 +236,33 @@ I(\tau) = \sum_{i,j}^N p_{ij} log_2 \frac{ p_{ij} }{ p_i p_j }.
 \end{equation*}
 \end{block}
 
+where: 
+$p_i$ is the probability that $x(n)$ has a value inside the $i$-th bin of 
+the histogram, $p_j$ is the probability that $x(n+\tau)$ has a value inside 
+the $j$-th bin of the histogram and $p_{ij}(\tau)$ is the probability 
+that $x(n)$ is in bin $i$ and $x(n+\tau)$ is in bin $j$.
+
 \end{frame}
 }
+
+
+
+\subsection{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{
+
+\begin{frame}{Average Mutual Information (AMI) for embedding delay}
+    \begin{figure}
+        \centering
+        \includegraphicscopyright[width=0.7\linewidth]{nonlinear-analyses/ami}
+	{Figure is adapted from Kabiraj et al. 2012 in {\bf Chaos}}
+	\caption{(A, B) AMI values for (C) chaotic and (D) noise time series.} 
+   \end{figure}
+	
+\end{frame}
+}
+
+
 
 
 
@@ -373,7 +420,7 @@ and $\Theta( \cdot )$ is the Heaviside function.
 \begin{frame}{Recurrence Quantification Analysis (RQA)}
 
 \begin{description}
-\item [ \textbf{RATIO} ] is the radio of DET to REC. \\
+\item [ \textbf{RATIO} ] is the ratio of DET to REC. \\
 			\textit{(useful to discover dynamic transitions)}.
 \item [ \textbf{ENTR} ] Shannon entropy of the frequency distribution of the 
 			diagonal line lengths.
@@ -406,7 +453,7 @@ where
 {
 \paper{Xochicale 2019 in {\bf PhD thesis}}
 
-\begin{frame}{3D surface plots of RQA}
+\begin{frame}{RQA}
 
     \begin{figure}
         \includegraphicscopyright[width=0.5\linewidth]{nonlinear-analyses/rqas}{Figure is adapted from Xochicale 2019}
